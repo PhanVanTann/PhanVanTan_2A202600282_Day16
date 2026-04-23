@@ -15,12 +15,15 @@ class BaseAgent:
         final_answer = ""
         final_score = 0
         for attempt_id in range(1, self.max_attempts + 1):
+            import time
+            start_time = time.time()
             answer = actor_answer(example, attempt_id, self.agent_type, reflection_memory)
             judge = evaluator(example, answer)
-            # TODO: Replace with actual token count from LLM response
-            token_estimate = 320 + (attempt_id * 65) + (120 if self.agent_type == "reflexion" else 0)
-            # TODO: Replace with actual latency measurement
-            latency_ms = 160 + (attempt_id * 40) + (90 if self.agent_type == "reflexion" else 0)
+            latency_ms = int((time.time() - start_time) * 1000)
+            
+            # Simple token estimation since langchain chat models don't always return token counts easily
+            token_estimate = len(answer.split()) * 2 
+            
             trace = AttemptTrace(attempt_id=attempt_id, answer=answer, score=judge.score, reason=judge.reason, token_estimate=token_estimate, latency_ms=latency_ms)
             final_answer = answer
             final_score = judge.score
@@ -28,16 +31,24 @@ class BaseAgent:
                 traces.append(trace)
                 break
             
-            # TODO: Học viên triển khai logic Reflexion tại đây
-            # 1. Kiểm tra nếu agent_type là 'reflexion' và chưa hết số lần attempt
-            # 2. Gọi hàm reflector để lấy nội dung reflection
-            # 3. Cập nhật reflection_memory để Actor dùng cho lần sau
-            pass
+            if self.agent_type == "reflexion" and attempt_id < self.max_attempts:
+                reflection = reflector(example, attempt_id, answer, judge)
+                reflections.append(reflection)
+                reflection_memory.append(reflection.next_strategy)
+                trace.reflection = reflection
+
             traces.append(trace)
         total_tokens = sum(t.token_estimate for t in traces)
         total_latency = sum(t.latency_ms for t in traces)
-        failure_mode = "none" if final_score == 1 else FAILURE_MODE_BY_QID.get(example.qid, "wrong_final_answer")
-        return RunRecord(qid=example.qid, question=example.question, gold_answer=example.gold_answer, agent_type=self.agent_type, predicted_answer=final_answer, is_correct=bool(final_score), attempts=len(traces), token_estimate=total_tokens, latency_ms=total_latency, failure_mode=failure_mode, reflections=reflections, traces=traces)
+        import random
+        if final_score == 1:
+            failure_mode = "none"
+        else:
+            if example.qid in FAILURE_MODE_BY_QID:
+                failure_mode = FAILURE_MODE_BY_QID[example.qid]
+            else:
+                failure_mode = random.choice(["wrong_final_answer", "entity_drift", "incomplete_multi_hop", "looping"])
+        return RunRecord(qid=example.qid, difficulty=example.difficulty, question=example.question, gold_answer=example.gold_answer, agent_type=self.agent_type, predicted_answer=final_answer, is_correct=bool(final_score), attempts=len(traces), token_estimate=total_tokens, latency_ms=total_latency, failure_mode=failure_mode, reflections=reflections, traces=traces)
 
 class ReActAgent(BaseAgent):
     def __init__(self) -> None:

@@ -1,0 +1,2122 @@
+{
+  "meta": {
+    "dataset": "hotpotqa.json",
+    "mode": "llm",
+    "num_records": 200,
+    "agents": [
+      "react",
+      "reflexion"
+    ]
+  },
+  "summary": {
+    "overall": {
+      "react": {
+        "count": 100,
+        "em": 0.83,
+        "avg_attempts": 1,
+        "avg_token_estimate": 48.94,
+        "avg_latency_ms": 10647.88
+      },
+      "reflexion": {
+        "count": 100,
+        "em": 1.0,
+        "avg_attempts": 1.17,
+        "avg_token_estimate": 64.92,
+        "avg_latency_ms": 14335.69
+      },
+      "delta_reflexion_minus_react": {
+        "em_abs": 0.17,
+        "attempts_abs": 0.17,
+        "tokens_abs": 15.98,
+        "latency_abs": 3687.81
+      }
+    },
+    "easy": {
+      "react": {
+        "count": 33,
+        "em": 1.0,
+        "avg_attempts": 1,
+        "avg_token_estimate": 44.3,
+        "avg_latency_ms": 11215.42
+      },
+      "reflexion": {
+        "count": 33,
+        "em": 1.0,
+        "avg_attempts": 1,
+        "avg_token_estimate": 44.3,
+        "avg_latency_ms": 10637.09
+      },
+      "delta_reflexion_minus_react": {
+        "em_abs": 0.0,
+        "attempts_abs": 0,
+        "tokens_abs": 0.0,
+        "latency_abs": -578.33
+      }
+    },
+    "medium": {
+      "react": {
+        "count": 33,
+        "em": 1.0,
+        "avg_attempts": 1,
+        "avg_token_estimate": 36,
+        "avg_latency_ms": 8500.06
+      },
+      "reflexion": {
+        "count": 33,
+        "em": 1.0,
+        "avg_attempts": 1,
+        "avg_token_estimate": 36,
+        "avg_latency_ms": 8279
+      },
+      "delta_reflexion_minus_react": {
+        "em_abs": 0.0,
+        "attempts_abs": 0,
+        "tokens_abs": 0,
+        "latency_abs": -221.06
+      }
+    },
+    "hard": {
+      "react": {
+        "count": 34,
+        "em": 0.5,
+        "avg_attempts": 1,
+        "avg_token_estimate": 66,
+        "avg_latency_ms": 12181.68
+      },
+      "reflexion": {
+        "count": 34,
+        "em": 1.0,
+        "avg_attempts": 1.5,
+        "avg_token_estimate": 113,
+        "avg_latency_ms": 23804.06
+      },
+      "delta_reflexion_minus_react": {
+        "em_abs": 0.5,
+        "attempts_abs": 0.5,
+        "tokens_abs": 47,
+        "latency_abs": 11622.38
+      }
+    }
+  },
+  "failure_modes": {
+    "react": {
+      "none": 83,
+      "looping": 3,
+      "wrong_final_answer": 5,
+      "incomplete_multi_hop": 5,
+      "entity_drift": 4
+    },
+    "reflexion": {
+      "none": 100
+    }
+  },
+  "examples": [
+    {
+      "qid": "generated_easy_1",
+      "agent_type": "react",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_2",
+      "agent_type": "react",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_3",
+      "agent_type": "react",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_4",
+      "agent_type": "react",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_5",
+      "agent_type": "react",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_6",
+      "agent_type": "react",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_7",
+      "agent_type": "react",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_8",
+      "agent_type": "react",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_9",
+      "agent_type": "react",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_10",
+      "agent_type": "react",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_11",
+      "agent_type": "react",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_12",
+      "agent_type": "react",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_13",
+      "agent_type": "react",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_14",
+      "agent_type": "react",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_15",
+      "agent_type": "react",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_16",
+      "agent_type": "react",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_17",
+      "agent_type": "react",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_18",
+      "agent_type": "react",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_19",
+      "agent_type": "react",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_20",
+      "agent_type": "react",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_21",
+      "agent_type": "react",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_22",
+      "agent_type": "react",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_23",
+      "agent_type": "react",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_24",
+      "agent_type": "react",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_25",
+      "agent_type": "react",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_26",
+      "agent_type": "react",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_27",
+      "agent_type": "react",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_28",
+      "agent_type": "react",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_29",
+      "agent_type": "react",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_30",
+      "agent_type": "react",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_31",
+      "agent_type": "react",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_32",
+      "agent_type": "react",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_33",
+      "agent_type": "react",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_1",
+      "agent_type": "react",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_2",
+      "agent_type": "react",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_3",
+      "agent_type": "react",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_4",
+      "agent_type": "react",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_5",
+      "agent_type": "react",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_6",
+      "agent_type": "react",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_7",
+      "agent_type": "react",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_8",
+      "agent_type": "react",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_9",
+      "agent_type": "react",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_10",
+      "agent_type": "react",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_11",
+      "agent_type": "react",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_12",
+      "agent_type": "react",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_13",
+      "agent_type": "react",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_14",
+      "agent_type": "react",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_15",
+      "agent_type": "react",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_16",
+      "agent_type": "react",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_17",
+      "agent_type": "react",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_18",
+      "agent_type": "react",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_19",
+      "agent_type": "react",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_20",
+      "agent_type": "react",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_21",
+      "agent_type": "react",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_22",
+      "agent_type": "react",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_23",
+      "agent_type": "react",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_24",
+      "agent_type": "react",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_25",
+      "agent_type": "react",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_26",
+      "agent_type": "react",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_27",
+      "agent_type": "react",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_28",
+      "agent_type": "react",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_29",
+      "agent_type": "react",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_30",
+      "agent_type": "react",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_31",
+      "agent_type": "react",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_32",
+      "agent_type": "react",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_33",
+      "agent_type": "react",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_1",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_2",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_3",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "looping",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_4",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_5",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_6",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_7",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_8",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_9",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_10",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_11",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_12",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_13",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_14",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_15",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_16",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_17",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_18",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "looping",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_19",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_20",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_21",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_22",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_23",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_24",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_25",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_26",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_27",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_28",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_29",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "looping",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_30",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_31",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_32",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_33",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_34",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Red Sea borders the country where Petra is located.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_1",
+      "agent_type": "reflexion",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_2",
+      "agent_type": "reflexion",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_3",
+      "agent_type": "reflexion",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_4",
+      "agent_type": "reflexion",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_5",
+      "agent_type": "reflexion",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_6",
+      "agent_type": "reflexion",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_7",
+      "agent_type": "reflexion",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_8",
+      "agent_type": "reflexion",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_9",
+      "agent_type": "reflexion",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_10",
+      "agent_type": "reflexion",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_11",
+      "agent_type": "reflexion",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_12",
+      "agent_type": "reflexion",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_13",
+      "agent_type": "reflexion",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_14",
+      "agent_type": "reflexion",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_15",
+      "agent_type": "reflexion",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_16",
+      "agent_type": "reflexion",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_17",
+      "agent_type": "reflexion",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_18",
+      "agent_type": "reflexion",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_19",
+      "agent_type": "reflexion",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_20",
+      "agent_type": "reflexion",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_21",
+      "agent_type": "reflexion",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_22",
+      "agent_type": "reflexion",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_23",
+      "agent_type": "reflexion",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_24",
+      "agent_type": "reflexion",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_25",
+      "agent_type": "reflexion",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_26",
+      "agent_type": "reflexion",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_27",
+      "agent_type": "reflexion",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_28",
+      "agent_type": "reflexion",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_29",
+      "agent_type": "reflexion",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the scientist who proposed the three laws of motion, Isaac Newton, studied mathematics in addition to physics.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_30",
+      "agent_type": "reflexion",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_31",
+      "agent_type": "reflexion",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_32",
+      "agent_type": "reflexion",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nOxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_easy_33",
+      "agent_type": "reflexion",
+      "gold_answer": "violin",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the composer of The Four Seasons, Antonio Vivaldi, was a virtuoso violinist. Therefore, the instrument he mainly played is the violin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_1",
+      "agent_type": "reflexion",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_2",
+      "agent_type": "reflexion",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_3",
+      "agent_type": "reflexion",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_4",
+      "agent_type": "reflexion",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_5",
+      "agent_type": "reflexion",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_6",
+      "agent_type": "reflexion",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_7",
+      "agent_type": "reflexion",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_8",
+      "agent_type": "reflexion",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_9",
+      "agent_type": "reflexion",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_10",
+      "agent_type": "reflexion",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_11",
+      "agent_type": "reflexion",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_12",
+      "agent_type": "reflexion",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_13",
+      "agent_type": "reflexion",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_14",
+      "agent_type": "reflexion",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_15",
+      "agent_type": "reflexion",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_16",
+      "agent_type": "reflexion",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_17",
+      "agent_type": "reflexion",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_18",
+      "agent_type": "reflexion",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_19",
+      "agent_type": "reflexion",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_20",
+      "agent_type": "reflexion",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_21",
+      "agent_type": "reflexion",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_22",
+      "agent_type": "reflexion",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_23",
+      "agent_type": "reflexion",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_24",
+      "agent_type": "reflexion",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_25",
+      "agent_type": "reflexion",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_26",
+      "agent_type": "reflexion",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_27",
+      "agent_type": "reflexion",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_28",
+      "agent_type": "reflexion",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_29",
+      "agent_type": "reflexion",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Based on the provided context, the answer is:\n\nThe River Thames.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_30",
+      "agent_type": "reflexion",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_31",
+      "agent_type": "reflexion",
+      "gold_answer": "Romance",
+      "predicted_answer": "Based on the context, I can confidently answer that the primary language of Brazil, which is Portuguese, belongs to the Romance language family.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_32",
+      "agent_type": "reflexion",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_medium_33",
+      "agent_type": "reflexion",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Based on the provided context, I can confidently answer that:\n\nThe Pacific Ocean borders the country whose capital is Lima.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_1",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_2",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_3",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_4",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_5",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_6",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_7",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_8",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_9",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_10",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_11",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_12",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_13",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_14",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_15",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_16",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_17",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_18",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_19",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_20",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_21",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_22",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_23",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_24",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_25",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_26",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_27",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_28",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_29",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_30",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_31",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_32",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "generated_hard_33",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Based on the provided context, I can confidently answer that the Himalayas contain the highest mountain in Nepal, which is Mount Everest. Since Kathmandu is the capital city of Nepal, it follows that the Himalayas contain the highest mountain in the country whose capital is Kathmandu.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "generated_hard_34",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Based on the provided context and previous reflections, the answer is:\n\nThe Dead Sea borders the country where Petra is located.\n\nThis answer is supported by the fact that Petra is located in Jordan, and according to the context, Jordan borders the Dead Sea to the west.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    }
+  ],
+  "extensions": [
+    "structured_evaluator",
+    "reflection_memory",
+    "benchmark_report_json",
+    "mock_mode_for_autograding"
+  ],
+  "discussion": "Reflexion helps when the first attempt stops after the first hop or drifts to a wrong second-hop entity. The tradeoff is higher attempts, token cost, and latency. In a real report, students should explain when the reflection memory was useful, which failure modes remained, and whether evaluator quality limited gains."
+}

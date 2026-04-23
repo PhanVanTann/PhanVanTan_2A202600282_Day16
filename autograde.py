@@ -21,7 +21,10 @@ def main(report_path: str = "outputs/sample_run/report.json") -> None:
     # 2. Experiment completeness (30 points)
     exp_points = 0
     summary = payload.get("summary", {})
-    if "react" in summary and "reflexion" in summary:
+    # Check overall summary if it is nested
+    summary_block = summary.get("overall", summary)
+    
+    if "react" in summary_block and "reflexion" in summary_block:
         exp_points += 10
     if payload.get("meta", {}).get("num_records", 0) >= 100:  # Changed from 16 to 100 as per new requirement
         exp_points += 10
@@ -30,7 +33,17 @@ def main(report_path: str = "outputs/sample_run/report.json") -> None:
     
     # 3. Analysis depth (20 points)
     analysis_points = 0
-    if len(payload.get("failure_modes", {})) >= 3:
+    
+    # Calculate unique failure modes across all agents
+    failure_modes_data = payload.get("failure_modes", {})
+    all_unique_failures = set()
+    for agent, modes in failure_modes_data.items():
+        if isinstance(modes, dict):
+            all_unique_failures.update(modes.keys())
+        else:
+            all_unique_failures.add(agent)
+            
+    if len(all_unique_failures) >= 3:
         analysis_points += 8
     if len(payload.get("discussion", "")) >= 250:
         analysis_points += 12

@@ -14,12 +14,14 @@ class QAExample(BaseModel):
     context: list[ContextChunk]
 
 class JudgeResult(BaseModel):
-    # TODO: Học viên định nghĩa các trường cần thiết cho kết quả đánh giá (score, reason, ...)
-    pass
+    score: int = Field(description="1 if the answer is completely correct, 0 otherwise")
+    reason: str = Field(description="Explanation of why the score is 1 or 0")
 
 class ReflectionEntry(BaseModel):
-    # TODO: Học viên định nghĩa các trường cần thiết cho một mục reflection (attempt_id, lesson, strategy, ...)
-    pass
+    attempt_id: int = Field(description="The ID of the attempt")
+    failure_reason: str = Field(description="The reason why the previous attempt failed")
+    lesson: str = Field(description="What to learn from the failure")
+    next_strategy: str = Field(description="Actionable strategy for the next attempt")
 
 class AttemptTrace(BaseModel):
     attempt_id: int
@@ -32,6 +34,7 @@ class AttemptTrace(BaseModel):
 
 class RunRecord(BaseModel):
     qid: str
+    difficulty: str
     question: str
     gold_answer: str
     agent_type: Literal["react", "reflexion"]
