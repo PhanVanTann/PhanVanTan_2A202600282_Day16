@@ -1,5 +1,6 @@
 # Lab 16 Benchmark Report
-
+# Họ Và Tên: Phan Văn Tấn
+# MSHV : 2A202600282
 ## Metadata
 - Dataset: hotpotqa.json
 - Mode: llm
